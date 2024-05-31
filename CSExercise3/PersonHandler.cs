@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 namespace CSExercise3
 {
     //"Blueprint"
-    internal class PersonHandler 
+    public class PersonHandler 
     {
         public void SetAge(Person pers, int age)
         {
             pers.Age = age;
         }
 
-        public Person CreatePerson(int Age, string Fname, string Lname, double Height, double Weight)
+        public Person CreatePerson(string Fname, string Lname, int Age, double Height, double Weight)
         {
-            return new Person(Fname, Lname, Height, Weight);
+            return new Person(Fname, Lname, Age, Height, Weight);
         }
 
 

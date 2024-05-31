@@ -7,6 +7,7 @@
 
             //PersonHandler person1 = new();
 
+            //Går igenom person och personhandler logiken
             try
             {
                 Console.WriteLine("Testar ny person klass.");
@@ -22,6 +23,7 @@
                 throw new ArgumentException("Felaktigheter med input.", ex);
             }
         }
+        //Lista för User errors
     }
 }
 

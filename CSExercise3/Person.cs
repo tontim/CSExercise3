@@ -19,11 +19,11 @@ namespace CSExercise3
         //Constructor
         public Person(string fname, string lname, int age, double height, double weight)
         {
-            this.Fname = fname;
-            this.Lname = lname;
-            this.Age = age;
-            this.Height = height;
-            this.Weight = weight;
+            this.fname = fname ?? throw new ArgumentNullException(nameof(fname));
+            this.lname = lname ?? throw new ArgumentNullException(nameof(lname));
+            this.age = age;
+            this.height = height;
+            this.weight = weight;
         }
 
         public string fname

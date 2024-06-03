@@ -29,6 +29,13 @@ namespace CSExercise3
                 {
                     person.Talk();
                 }
+                /*För att komma åt superspeed för dog måste vi
+                anropa metoden inuti Dog, 
+                Animal listan känner inte till vad som finns i Dog */
+                else if (animal is Dog dogg)
+                {
+                    Console.WriteLine("Superspeed addition: " + dogg.SuperSpeed);
+                }
             }
 
             //Lista för User errors

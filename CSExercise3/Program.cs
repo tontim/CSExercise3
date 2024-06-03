@@ -1,11 +1,32 @@
-﻿namespace CSExercise3
+﻿using System;
+using System.Collections.Generic;
+using CSExercise3.UserError;
+
+namespace CSExercise3
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            //Lista för User errors
+            var errors = new List<UserError.UserError>();
 
-            //PersonHandler person1 = new();
+            var numericError = new NumericInputError();
+            var textError = new TextInputError();
+            var nullError = new NullInputError();
+            var longError = new LongInputError();
+            var shortError = new ShortInputError();
+
+            errors.Add(numericError);
+            errors.Add(textError);
+            errors.Add(nullError);
+            errors.Add(longError);
+            errors.Add(shortError);
+
+            foreach (var error in errors)
+            {
+                Console.WriteLine(error);
+            }
 
             //Går igenom person och personhandler logiken
             try
@@ -22,8 +43,10 @@
                 Console.WriteLine($"Ett FEL har inträffat! Felkod: {ex.Message}");
                 throw new ArgumentException("Felaktigheter med input.", ex);
             }
+
+            Console.ReadLine();
         }
-        //Lista för User errors
+
     }
 }
 

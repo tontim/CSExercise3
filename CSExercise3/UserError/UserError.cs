@@ -25,5 +25,27 @@ namespace CSExercise3.UserError
             throw new NotImplementedException("You tried to use a textinput in a numeric only field. This fired an error!");
         }
     }
+    class NullInputError : UserError
+    {
+        public override string UEMessage()
+        {
+            throw new NotImplementedException("You tried to use a null input.");
+        }
+    }
+    class LongInputError : UserError
+    {
+        public override string UEMessage()
+        {
+            throw new NotImplementedException("You tried to use a too long input.");
+        }
+    }
+    class ShortInputError : UserError
+    {
+        public override string UEMessage()
+        {
+            throw new NotImplementedException("You tried to use a too short input.");
+        }
+    }
+    
 
 }

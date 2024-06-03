@@ -8,6 +8,29 @@ namespace CSExercise3
     {
         static void Main(string[] args)
         {
+            /*Animals listan som måste vara av typen "Animal"
+            annars kommer det bli mismatch */
+
+            var animals = new List<Animal>();
+            var horse = new Horse("Horsey", 5, 500);
+            var dog = new Dog("Doggey", 3, 30);
+            var wolfman = new Wolfman("Wolfeymaney", 500, 100);
+            animals.Add(horse);
+            animals.Add(dog);
+            animals.Add(wolfman);
+
+            /* För varje item i animals kommer funktionen stats skrivas ut
+             som skrevs i Animal.cs, och sen kollar vi även om IPerson används
+            och då kommer vi använda oss av Talk() funktionen i IPerson*/
+            foreach (var animal in animals)
+            {
+                Console.WriteLine(animal.Stats());
+                if (animal is IPerson person)
+                {
+                    person.Talk();
+                }
+            }
+
             //Lista för User errors
             var errors = new List<UserError.UserError>();
 
@@ -23,6 +46,7 @@ namespace CSExercise3
             errors.Add(longError);
             errors.Add(shortError);
 
+            Console.WriteLine("Här följer alla usererrors:");
             foreach (var error in errors)
             {
                 Console.WriteLine(error);
@@ -43,7 +67,7 @@ namespace CSExercise3
                 Console.WriteLine($"Ett FEL har inträffat! Felkod: {ex.Message}");
                 throw new ArgumentException("Felaktigheter med input.", ex);
             }
-
+            Console.WriteLine("Gick bra.");
             Console.ReadLine();
         }
 
